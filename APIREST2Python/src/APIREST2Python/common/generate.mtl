@@ -1,0 +1,22 @@
+[comment encoding = UTF-8 /]
+[module generate('http://iesalandalus.org/apirest')]
+
+
+[template public generateElement(anEntity : Entity)]
+
+[comment @main /]
+[file (anEntity.Name+'.py', false, 'UTF-8')]
+from Flask import App
+#File generated automatically
+app = App(_Name_)
+
+[for (op : Operation | anEntity.operations)]
+	
+	@app.route('[anEntity.path/]', methods=[op.method/])
+	def make[anEntity.Name/][op.method/](self[for (param : Params | op.params)],[param.Name/][/for]):
+		print('TODO')
+
+[/for]
+[/file]
+
+[/template]

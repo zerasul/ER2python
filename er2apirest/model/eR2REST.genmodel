@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ER2REST/src-gen" creationIcons="false" editDirectory="/ER2REST.edit/src-gen"
+    editorDirectory="/ER2REST.editor/src-gen" modelPluginID="ER2REST" modelName="ER2REST"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>eR2REST.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="ER2REST" disposableProviderFactory="true" ecorePackage="eR2REST.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eR2REST.ecore#//PropertyType">
+      <genEnumLiterals ecoreEnumLiteral="eR2REST.ecore#//PropertyType/VARCHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="eR2REST.ecore#//PropertyType/NUMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="eR2REST.ecore#//PropertyType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="eR2REST.ecore#//PropertyType/DOUBLE"/>
+    </genEnums>
+    <genClasses ecoreClass="eR2REST.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eR2REST.ecore#//Entity/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eR2REST.ecore#//Entity/isASubClass"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference eR2REST.ecore#//Entity/property"/>
+    </genClasses>
+    <genClasses ecoreClass="eR2REST.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eR2REST.ecore#//Property/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eR2REST.ecore#//Property/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eR2REST.ecore#//Property/isNull"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eR2REST.ecore#//Property/Primary_Key"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference eR2REST.ecore#//Property/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="eR2REST.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eR2REST.ecore#//Constraint/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="eR2REST.ecore#//ForeignConstraint"/>
+    <genClasses ecoreClass="eR2REST.ecore#//CheckConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eR2REST.ecore#//CheckConstraint/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="eR2REST.ecore#//Relation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eR2REST.ecore#//Relation/Name"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference eR2REST.ecore#//Relation/property"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eR2REST.ecore#//Relation/entities"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

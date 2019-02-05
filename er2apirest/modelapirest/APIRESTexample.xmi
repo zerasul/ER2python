@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<apirest:Entity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:apirest="http://iesalandalus.org/apirest" Name="Person" path="/Person"
+xsi:schemaLocation="http://iesalandalus.org/apirest APIREST.ecore">
+  <operations>
+    <params Name="ID"/>
+    <params Name="Name"/>
+    <params Name="Phone"/>
+  </operations>
+  <operations method="POST"/>
+  <operations method="PUT"/>
+  <operations method="DELETE"/>
+</apirest:Entity>

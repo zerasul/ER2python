@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eR2REST:Entity
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:eR2REST="http://www.example.org/eR2REST"
+    xsi:schemaLocation="http://www.example.org/eR2REST eR2REST.ecore"
+    Name="Person">
+  <property
+      Name="ID"
+      Primary_Key="/"/>
+  <property
+      Name="Name"
+      Type="NUMBER"/>
+  <property
+      Name="Phone"/>
+</eR2REST:Entity>

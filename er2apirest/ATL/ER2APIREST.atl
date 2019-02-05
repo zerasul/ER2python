@@ -1,0 +1,53 @@
+-- @path MM=/ER2REST/model/eR2REST.ecore
+-- @path MM1=/ER2REST/modelapirest/APIREST.ecore
+
+module ER2APIREST;
+create API : MM1 from IN : MM;
+
+rule main{
+	from
+	entity : MM!Entity
+	to
+	apientity: MM1!Entity(
+		Name <- entity.Name,
+		path <- '/'+entity.Name
+	),
+	operationR: MM1!Operation(
+		method <- #GET
+		),
+	operationW: MM1!Operation(
+		method <- #POST	
+	),
+	operationU: MM1!Operation(
+		method<- #PUT	
+	),
+	operationD: MM1!Operation(
+		method <- #DELETE
+	)
+	
+		do{
+			
+			apientity.operations<-operationR;
+			apientity.operations<-operationW;
+			apientity.operations<-operationU;
+			apientity.operations<-operationD;
+		}
+	
+}
+
+rule property2params{
+	from 
+		property: MM!Property
+	to 
+		param: MM1!Params(
+			Name <- property.Name,
+			Type <- #BODY
+		)
+		do{
+			
+			MM1!Operation.allInstances().first().params<-param;
+			
+		}
+}
+
+
